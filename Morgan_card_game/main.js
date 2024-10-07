@@ -7,7 +7,7 @@ class Player {
             { cardname: "Mago", attack: 7, life: 8 },
             { cardname: "Arqueiro", attack: 6, life: 9 }
         ];
-        this.masterCard = { cardname: "Sorte", life: 20 };
+        this.masterCard = { cardname: "Sorte", life: 20 }; // Adiciona a vida da carta mestre
     }
     updateUI() {
         this.cards.forEach((card, index) => {
@@ -41,6 +41,9 @@ function displayMessage(message) {
 // Inicializa a interface dos jogadores
 player1.updateUI();
 player2.updateUI();
+
+// Exibi de quem é o turno
+document.getElementById("tittle").innerText = `Turno do ${currentPlayer.id}`;
 
 // Adiciona evento para rolar os dados
 document.getElementById("roll-dice").addEventListener("click", function() {
@@ -81,18 +84,21 @@ document.querySelectorAll(".card").forEach(card => {
 // Função de ataque
 function attack() {
     const playerAttack = parseInt(selectedPlayerCard.querySelector("#attack").innerText);
-    const enemyLife = selectedEnemyCard.querySelector("#life");
-    let enemyCurrentLife = parseInt(enemyLife.innerText);
+    
+    // A vida da carta mestre do adversário
+    const enemyMasterLife = document.querySelector(`#${currentPlayer.id === "player1" ? "player2" : "player1"} #master #life`);
+    let enemyCurrentLife = parseInt(enemyMasterLife.innerText);
 
-    enemyCurrentLife -= playerAttack;
+    enemyCurrentLife -= playerAttack; // Reduz a vida da carta mestre
+
     if (enemyCurrentLife <= 0) {
         enemyCurrentLife = 0;
-        displayMessage(`${selectedEnemyCard.querySelector("#cardname").innerText} foi derrotado!`);
+        displayMessage(`${currentPlayer.id} derrotou a carta mestre do oponente!`);
     } else {
-        displayMessage(`${selectedEnemyCard.querySelector("#cardname").innerText} agora tem ${enemyCurrentLife} de vida.`);
+        displayMessage(`A carta mestre do oponente agora tem ${enemyCurrentLife} de vida.`);
     }
 
-    enemyLife.innerText = enemyCurrentLife; // Atualiza a vida da carta inimiga
+    enemyMasterLife.innerText = enemyCurrentLife; // Atualiza a vida da carta mestre
 
     // Limpa as seleções para o próximo turno
     selectedPlayerCard = null;
@@ -111,7 +117,9 @@ document.getElementById("attack-button").addEventListener("click", function() {
         // Alterna o jogador
         currentPlayer = currentPlayer === player1 ? player2 : player1;
         displayMessage(`Fim do turno. Agora é a vez de ${currentPlayer.id}.`);
-
+        
+        // Exibi de quem é o turno
+        document.getElementById("tittle").innerText = `Turno do ${currentPlayer.id}`;
         // Esconde o botão de ataque após o turno
         this.style.display = "none"; 
         document.getElementById("roll-dice").style.display = "inline"; // Mostra o botão de rolar dados
