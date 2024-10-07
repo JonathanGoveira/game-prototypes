@@ -1,0 +1,163 @@
+:root {
+    --background-color: #2E4053;
+    --card-bg-color: #F2E5BF;
+    --master-bg-color: #FD8B51;
+    --text-color: #CB6040;
+    --border-color: #C0392B;
+    --button-bg-color: #629584;
+    --button-hover-color: #387478;
+    --button-text-color: #E2F1E7;
+    --player-bg-color: #34495E;
+    --dice-bg-color: #FD8B51;
+}
+
+/* Resetando estilo padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: var(--text-color);
+}
+
+/* Estilo do tabuleiro */
+.board {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--player-bg-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 1200px;
+    height: 60%;
+    position: relative;
+}
+
+/* Estilo dos jogadores */
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#player1 {
+    flex-direction: row;
+    position: absolute;
+    bottom: 20px; /* Mão do player 1 embaixo */
+}
+
+#player2 {
+    flex-direction: row;
+    position: absolute;
+    top: 20px; /* Mão do player 2 em cima */
+}
+
+/* Estilo das cartas */
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 120px; /* Dimensão para as cartas */
+    height: 180px;
+    margin: 0 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 2px solid var(--border-color);
+    justify-content: space-between; /* Alinha o conteúdo de forma que o Level fique no final */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.cardname {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.attributes, .attributes-master p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.attributes p:last-child {
+    color: var(--player-bg-color);
+    margin-top: 30px; /* Empurra o "Lvl" para o final da div */
+    font-weight: bold; /* Aplica o bold no "Lvl" */
+    text-align: center;
+}
+
+#game-messages {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Estilo das cartas mestres */
+.card-master {
+    background-color: var(--master-bg-color);
+    border: 2px solid var(--text-color);
+}
+
+/* Centralizando o botão de rolar dados */
+.button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: var(--button-bg-color);
+    border: none;
+    color: var(--button-text-color);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Rolar dados botão */
+#roll-dice {
+    background-color: var(--dice-bg-color);
+    color: var(--player-bg-color);
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#roll-dice:hover {
+    background-color: #F39C12;
+    color: #fff;
+}

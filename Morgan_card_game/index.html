@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morgan Card Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="tittle" id="tittle">Turno do</h1>
+    <div id="game-messages"></div>
+    
+    <div class="board">
+        <div class="player" id="player1">
+            <h1>Player 1</h1>
+            <button class="card card-attack">
+            <div class="card" id="card1">
+
+                    <div class="cardname" id="cardname">personagem 1</div>
+                    <div class="attributes">
+                        <p>Ataque: <span id="attack">0</span></p>
+                        <p>Vida: <span id="life">0</span></p>
+                        <p>Mana: <span id="mana">0</span></p>
+                        <p>XP: <span id="xp">0</span></p>
+                        <p>Lvl: <span id="lvl">0</span></p>
+                    </div>
+                </div>
+            </button>
+            <button class="card card-attack">
+
+                <div class="card" id="card2">
+                    <div class="cardname" id="cardname">personagem 2</div>
+                    <div class="attributes">
+                        <p>Ataque: <span id="attack">0</span></p>
+                        <p>Vida: <span id="life">0</span></p>
+                        <p>Mana: <span id="mana">0</span></p>
+                        <p>XP: <span id="xp">0</span></p>
+                        <p>Lvl: <span id="lvl">0</span></p>
+                    </div>
+                </div>
+            </button>
+            <button class="card card-attack">
+
+                <div class="card" id="card3">
+                    <div class="cardname" id="cardname">personagem 3</div>
+                    <div class="attributes">
+                        <p>Ataque: <span id="attack">0</span></p>
+                        <p>Vida: <span id="life">0</span></p>
+                        <p>Mana: <span id="mana">0</span></p>
+                        <p>XP: <span id="xp">0</span></p>
+                        <p>Lvl: <span id="lvl">0</span></p>
+                    </div>
+                </div>
+            </button>
+            <button class="card card-attack">
+
+                <div class="card card-master" id="master">
+                    <div class="cardname" id="cardname">Carta Mestre</div>
+                    <div class="attributes-master">
+                        <p>Life: <span id="life">0</span></p>
+                        <p>Mana: <span id="mana">0</span></p>
+                    </div>
+                </div>
+            </button>
+        </div>
+    
+        <div class="player" id="player2">
+            <h1>Player 2</h1>
+            <button class="card card-attack">
+            <div class="card" id="card1">
+
+                    <div class="cardname" id="cardname">personagem 1</div>
+                    <div class="attributes">
+                        <p>Ataque: <span id="attack">0</span></p>
+                        <p>Vida: <span id="life">0</span></p>
+                        <p>Mana: <span id="mana">0</span></p>
+                        <p>XP: <span id="xp">0</span></p>
+                        <p>Lvl: <span id="lvl">0</span></p>
+                    </div>
+                </div>
+            </button>
+            <button class="card card-attack">
+
+                <div class="card" id="card2">
+                    <div class="cardname" id="cardname">personagem 2</div>
+                    <div class="attributes">
+                        <p>Ataque: <span id="attack">0</span></p>
+                        <p>Vida: <span id="life">0</span></p>
+                        <p>Mana: <span id="mana">0</span></p>
+                        <p>XP: <span id="xp">0</span></p>
+                        <p>Lvl: <span id="lvl">0</span></p>
+                    </div>
+                </div>
+            </button>
+            <button class="card card-attack">
+
+                <div class="card" id="card3">
+                    <div class="cardname" id="cardname">personagem 3</div>
+                    <div class="attributes">
+                        <p>Ataque: <span id="attack">0</span></p>
+                        <p>Vida: <span id="life">0</span></p>
+                        <p>Mana: <span id="mana">0</span></p>
+                        <p>XP: <span id="xp">0</span></p>
+                        <p>Lvl: <span id="lvl">0</span></p>
+                    </div>
+                </div>
+            </button>
+            <button class="card card-attack">
+
+                <div class="card card-master" id="master">
+                    <div class="cardname" id="cardname">Carta Mestre</div>
+                    <div class="attributes-master">
+                        <p>Life: <span id="life">0</span></p>
+                        <p>Mana: <span id="mana">0</span></p>
+                    </div>
+                </div>
+            </button>
+        </div>
+        <!-- Adicionando um elemento para as mensagens de jogo -->
+        
+    </div>
+
+    <div class="button-container">
+        <button id="roll-dice">Rolar Dados</button>
+        <button id="attack-button" style="display: none;">Atacar</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
